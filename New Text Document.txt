@@ -1,0 +1,76 @@
+// floatingActionButton: FloatingActionButton(  
+        //   onPressed: () {},
+        //   child: Icon(Icons.add),
+        //   backgroundColor: Colors.red[400],
+        //   mini: true,
+        //   shape: RoundedRectangleBorder(
+        //     borderRadius: BorderRadius.all(Radius.circular(12.0))
+        //   ),
+        // ),
+  //@@@@@@@@@@@@@@@@@
+      //   floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+//@@@@@@@@@@@@@@@
+        // floatingActionButton: FloatingActionButton.extended(
+        //   onPressed: () {},
+        //   icon: Icon(Icons.message),
+        //   label: Text('Messaglors.redAccent,
+        //   shape: RoundedRectangleBorder(),
+        // ),e'),
+        //   backgroundColor: Co
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+
+void main() => runApp(MobileBtn());
+
+class MobileBtn extends StatefulWidget {
+  @override
+  _MobileBtnState createState() => _MobileBtnState();
+}
+
+class _MobileBtnState extends State<MobileBtn> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(  
+        appBar: AppBar(  
+          title: Text("Floating"),
+        ),
+       floatingActionButton: SpeedDial( 
+          animatedIcon: AnimatedIcons.menu_close,
+          overlayColor: Colors.green,
+          overlayOpacity: 0.4,
+          children: [
+            SpeedDialChild(
+              child :Icon(Icons.message),
+              backgroundColor: Colors.red, 
+              label: "Message",
+              //labelbackgroundColor: Colors.red,
+            ),
+            SpeedDialChild(
+              child:Icon(Icons.share),
+               backgroundColor: Colors.orange,
+               label: "Share",
+               //labelbackgroundColor:Colors.red,
+            ),
+            SpeedDialChild(
+              child:Icon(Icons.group),
+               backgroundColor: Colors.pink[400],
+               label: "Group",
+            ),
+            SpeedDialChild(
+              child:Icon(Icons.email),
+               backgroundColor: Colors.purple,
+               label: "E-mail"
+            ),
+          ],
+         ),
+       ),
+    );
+  }
+}
